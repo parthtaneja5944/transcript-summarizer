@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Summarize Extension",
+    "version": "1.0",
+    "description": "An extension that summarizes content.",
+    "permissions": ["activeTab", "scripting","tabs"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/replacely16.png",
+        "32": "images/replacely32.png",
+        "48": "images/replacely48.png",
+        "128": "images/replacely128.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/watch?v=*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "icons": {
+      "16": "images/replacely16.png",
+      "32": "images/replacely32.png",
+      "48": "images/replacely48.png",
+      "128": "images/replacely128.png"
+    }
+  }
+  
